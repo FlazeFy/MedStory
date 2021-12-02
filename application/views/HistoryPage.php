@@ -1,9 +1,6 @@
 <!--Leonardho R. Sitanggang
     1302194041  SE-43-03
 -->
-<?php
-		session_start();
-?>
 <!DOCTYPE html>
 <html>
 
@@ -18,7 +15,7 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
         <!--Source file.-->
-        <link type="text/css" rel="stylesheet" href="MainPage.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/MainPage.css'; ?>" />
         
     </head>
     <body>
@@ -30,7 +27,7 @@
                 <li  id="active"><a href="">Riwayat</a></li>
                 <li><a href="">Forum</a></li>
                 <li style="float:right"><a type="button" id="signOut" onclick="signOut()">Ganti Akun</a></li>
-                <li style="float:right"><a id="Profil" href="account" style="font-size:14px"><img id="MyData" src="assets/MyData.png"> [username]</a></li>
+                <li style="float:right"><a id="Profil" href="account" style="font-size:14px"><img id="MyData" src="assets/MyData.png"> <?php foreach($tracker as $data){echo $data->username;} ?></a></li>
                 <div id="ddParent">
                     <button id="dropbutton"><img id="set" src="assets/Setting.png"></button>
                         <!--DropDown menu navigation-->
@@ -58,7 +55,7 @@
 
         <!--News feeds.-->
         <br><br><br>
-        <h2>Selamat datang, <?php $username ?></h2>
+        <h2>Selamat datang, <?php foreach($tracker as $data){echo $data->username;} ?></h2>
         <div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; margin-top: 1%; width: 88%; padding-top: 0.5%; border-radius: 10px;">
           <h1 style="text-align: left;">Informasi Kesehatan</h1>
         <div class="d-flex flex-row" style="overflow-x: scroll;">
@@ -83,7 +80,8 @@
         <div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; padding-top: 1%; padding-bottom: 1%; width: 88%; border-radius: 10px;">
           <h1 style="text-align: left;">Riwayat Berobat</h1>
 					<div class="container">
-					<img type="button" src="assets/Info.png" id="helpBerobat" style="float: right; height: 35px; width: 35px; margin-top: -3%; margin-right: -4%;">
+					<img type="button" src="assets/Info.png" id="helpBerobat" style="float: right; height: 35px; width: 35px; margin-top: -3%; margin-right: -4%;" 
+							data-toggle="modal" data-target="#helpBerobatModal">
 					<!--Search-->
 					<form>
 							<input type="text" class="form-control" id="searchKesehatan" style="float: right; width: 30%; margin-top: -3%; margin-right: 1%;">
@@ -196,7 +194,6 @@
 				</div>
 				</div>
 				</main>
-
         <!-- Footer -->
         <footer class="text-center text-lg-start bg-light text-muted">
         <section style="background-color: #4183D7; padding-top: 3px;">
@@ -248,6 +245,30 @@
             </p>
           </div>
         </section>
+
+				<!-- Modal -->
+				<!-- Riwayat Berobat Help -->
+				<div class="modal fade" id="helpBerobatModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Tentang</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body" style="text-align: left">
+									<h6 class='card-title'>Detail Penyakit</h6><p id="detail">...</p>
+									<h6 class='card-title'>Diagnosa</h6><p id="diagnosa">...</p>
+									<h6 class='card-title'>Solusi</h6><p id="solusi">...</p>
+							</div>
+							<div class="modal-footer">
+								<p>Untuk informasi lebih lanjut, kunjungi </p>
+								<button type="button" class="btn btn-primary" style="background-color: #4183D7; border: 3px solid whitesmoke; border-radius: 10px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Bantuan</button>
+							</div>
+						</div>
+					</div>
+				</div>
         <div class="text-center p-4" style="background-color: #333333; color: whitesmoke;">1302194041-Leonardho R Sitanggang</div>
         </footer>
 
@@ -268,23 +289,6 @@
               });
             }
         </script>
-          
-        <!--Collapse JQuery-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-        <script>
-        $(document).ready(function(){
-          $('.collapsible').click(function(e) {
-              e.stopPropagation();
-              $('#iconDrop').css({
-                  "-ms-transform" : "rotate(180deg)",      //Internet Explorer  
-                  "-webkit-transform": "rotate(180deg)",   //Chrome & Safari
-                  "-moz-transform": "rotate(180deg)",      //Firefox
-                  "-o-transform" : "rotate(180deg)",       //Opera
-                  "transform": "rotate(180deg)"            //Others
-              });
-          });
-        })
-        </script>
 
 				<!--Javascript signout-->
 				<script type="text/javascript">
@@ -304,5 +308,34 @@
 									document.getElementById("Inputan").disabled = false;
 							}
         	</script>
+
+				<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+				<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+				<!--Ajax for json-->
+				<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>  
+				<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+					<!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+					<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+					<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+					<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+					-->
+				
+				<!--Jquery-->
+				<script type="text/javascript" src="<?php echo base_url().'assets/js/getBantuanJson.js'; ?>"></script>
+        <script>
+        $(document).ready(function(){
+          $('.collapsible').click(function(e) {
+              e.stopPropagation();
+              $('#iconDrop').css({
+                  "-ms-transform" : "rotate(180deg)",      //Internet Explorer  
+                  "-webkit-transform": "rotate(180deg)",   //Chrome & Safari
+                  "-moz-transform": "rotate(180deg)",      //Firefox
+                  "-o-transform" : "rotate(180deg)",       //Opera
+                  "transform": "rotate(180deg)"            //Others
+              });
+          });
+        })
+        </script>
     </body>
 </html>

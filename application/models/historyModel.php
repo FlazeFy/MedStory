@@ -4,7 +4,7 @@
 	class historyModel extends CI_Model {
 		//Riwayat kesehatan
 		public function get_data_berobat(){
-			$data = $this->db->get('riwayatkesehatan');
+			$data = $this->db->get('riwayatkesehatan_flazefy');
 			return $data->result_array();
 		}
 		//News Feed
@@ -12,5 +12,14 @@
 			$data = $this->db->get('newsfeed');
 			return $data->result_array();
 		}
+		//Hubungkan data ke tiap halaman
+		public function usertracker()
+		{
+			$this->db->select('*');
+			$this->db->from('loginuser');
+			$this->db->order_by('id_login desc');
+			$this->db->limit('1');
+			return $this->db->get()->result();
+		}	
 	}
 ?>

@@ -14,7 +14,7 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
         <!--Source file-->
-        <link type="text/css" rel="stylesheet" href="MainPage.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/MainPage.css'; ?>" />
     </head>
     <body>
         <!--Main Navigation menu.-->
@@ -25,7 +25,7 @@
                 <li><a href="history">Riwayat</a></li>
                 <li><a href="">Forum</a></li>
                 <li style="float:right"><a type="button" id="signOut" onclick="signOut()">Ganti Akun</a></li>
-                <li style="float:right;"><a id="Profil" href="" style="font-size:14px"><img id="MyData" src="assets/MyData.png"> [username]</a></li>
+                <li style="float:right;"><a id="Profil" href="" style="font-size:14px"><img id="MyData" src="assets/MyData.png"> <?php foreach($tracker as $data){echo $data->username;} ?></a></li>
                 <div id="ddParent">
                     <button id="dropbutton"><img id="set" src="assets/Setting.png"></button>
                         <!--DropDown menu navigation-->
@@ -61,7 +61,7 @@
                         <div class="card-body">
                           <!--Mini profil.-->
                           <div class="d-flex flex-column align-items-center text-center">
-                            <img src="assets/user_flazefy.jpg" alt="Admin" class="rounded-circle img-fluid" style="width:200px; height:200px;">
+                            <img src="assets/user_<?php foreach($tracker as $data){echo $data->username;} ?>.jpg" alt="Admin" class="rounded-circle img-fluid" style="width:200px; height:200px;">
                             <div class="mt-3">
                               <h4 style="color: white;"><?php
 																	$i = 0;

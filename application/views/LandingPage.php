@@ -20,7 +20,7 @@
         <link type="text/css" rel="stylesheet" href="LoginPage.css">
     </head>
     <body>
-		<form method="get" action="history">
+		<form method="post" action="<?php echo base_url().'landing/savedata'; ?>">
           <!--Login section-->
             <div class="third container-fluid" style="width: 50%; left: 45%; top: 25%;">
                 <div class="row" style="height: auto;">
@@ -36,10 +36,10 @@
                             <div class="row mt-2">
                                 <!--Data diri.-->
                                 <div class="col-md-12" style="margin: 2px;"><h6>Username</h6><input type="text" class="form-control" id="username" name="username"></div>                            
-                                <div class="col-md-12" style="margin: 2px;"><h6>Password</h6><input type="password" class="form-control" id="pass" name="pass"></div>    
+                                <div class="col-md-12" style="margin: 2px;"><h6>Password</h6><input type="password" class="form-control" id="pass" name="password"></div>    
                             </div>
                             <div class="mt-5 text-left"><button class="ButtonC" type="button">Lupa Password</button></div>
-                            <div class="mt-5 text-center"><button class="ButtonB" type="submit" onclick="verifikasiLogin()">Submit</button></div>
+                            <div class="mt-5 text-center"><button class="ButtonB" type="submit" onclick="verifikasiLogin()" name="save">Submit</button></div>
                             <div class="mt-5 text-center"><button class="ButtonA" type="button" onclick="window.location.href='createAcc'">Buat Akun</button></div>
                         </div>
                 </div>
