@@ -1,0 +1,132 @@
+/*Leonardho R. Sitanggang
+    1302194041  SE-43-03
+*/
+body {
+    background-image: url("assets/background1.png");
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size: cover;
+}
+
+
+/*Text Entry*/
+.Inputan {
+    font-family: 'Lucida Sans';
+    font-size: 14px;
+    color:#808080;
+    background-color: whitesmoke;
+    border-width: 0 0 3.5px;
+    border-bottom: 3.5px solid #808080;
+    border-radius: 3px;
+    padding: 7px 30px;
+    text-align: left;
+    margin: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+::placeholder {
+    color: #808080;
+}
+.Inputan:hover {
+    border-bottom: 4px solid #22A7F0;
+    border-radius: 3px;
+}
+.Inputan:focus {
+    border-bottom: 4px solid #22A7F0;
+    border-radius: 3px;
+    outline: none;
+}
+.Input2 {
+    font-family: 'Lucida Sans';
+    font-size: 14px;
+    color: #808080;;
+    background-color: whitesmoke;
+    border-width: 0 0 3.5px;
+    border-bottom: 3.5px solid #808080;
+    border-radius: 3px;
+    padding: 7px 10px;
+    text-align: left;
+    margin: 8px;
+    width: 65px;
+}
+.info{
+    font-family: 'Lucida Sans';
+    font-size: 12.5px;
+    color:#4183D7;
+}
+.sat {
+    color: #4183D7;
+    font-weight: bold;
+}
+
+
+/*Button*/
+.ButtonA {
+    background-color: #4183D7;
+    font-family: 'Lucida Sans';
+    font-size: 16px;
+    color: whitesmoke;
+    border-radius: 10px;
+    display: flex;
+    margin: auto;
+    padding: 8px 18px;
+    border: 0px solid whitesmoke;
+    position: relative;
+    margin-bottom: 1%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.backButton {
+    height: 35px;
+    width: 35px;
+    align-items: center;
+    margin-top: auto;
+    justify-content: center;
+}
+.ButtonB{
+    background-color: #4183D7;
+    margin-left: 5%;
+    margin-top: 5%;
+    position: relative;
+    border: 3px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/*Text*/
+.Judul {
+    text-align: left;
+    font-family: 'Lucida Sans';
+    font-size: 24px;
+    color: #4183D7;
+}
+
+/*Container*/
+.MainBox {
+    font-family: 'Lucida Sans';
+    padding: 40px 20px;
+    border: 5px solid #4183D7;
+    background-color: whitesmoke;
+    margin-top: 1%;
+    margin-left: 5%;
+    max-width: 60%;
+    left: 5%;
+    width: 100%;
+    display: flex;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.col {
+    flex: 1;
+    padding: 0 15px;
+    text-align: left;
+    margin: 0px;
+}
+main .row .col{
+	height: 250px;
+	padding: 15px;
+	text-align: center;
+}
+
