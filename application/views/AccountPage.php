@@ -113,9 +113,10 @@
                                 <p style="color: white; font-size: 12px;">3 jawaban</p>
                             </div>
                             </div>
-                          </div>
+														</div>
                         </div>
                       </div>
+	
                       
                     </div>
                     <div class="col-md-8">
@@ -352,23 +353,6 @@
               }
             </script>
 
-            <!--Collapse JQuery-->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-            <script>
-            $(document).ready(function(){
-              $('.collapsible').click(function(e) {
-                  e.stopPropagation();
-                  $('#iconDrop').css({
-                      "-ms-transform" : "rotate(180deg)",      //Internet Explorer  
-                      "-webkit-transform": "rotate(180deg)",   //Chrome & Safari
-                      "-moz-transform": "rotate(180deg)",      //Firefox
-                      "-o-transform" : "rotate(180deg)",       //Opera
-                      "transform": "rotate(180deg)"            //Others
-                  });
-              });
-            })
-            </script>
-
 						<!--Javascript signout-->
 						<script type="text/javascript">
 							function signOut(){
@@ -387,5 +371,28 @@
 										document.getElementById("Inputan").disabled = false;
 								}
         		</script>
+						
+						<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+						<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+						<!--Ajax for json-->
+						<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>  
+						<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+            <!--Collapse JQuery-->
+            <script>
+            $(document).ready(function(){
+              $('.collapsible').click(function(e) {
+                  e.stopPropagation();
+                  $('#iconDrop').css({
+                      "-ms-transform" : "rotate(180deg)",      //Internet Explorer  
+                      "-webkit-transform": "rotate(180deg)",   //Chrome & Safari
+                      "-moz-transform": "rotate(180deg)",      //Firefox
+                      "-o-transform" : "rotate(180deg)",       //Opera
+                      "transform": "rotate(180deg)"            //Others
+                  });
+              });
+            })
+            </script>
+
     </body>
 </html>

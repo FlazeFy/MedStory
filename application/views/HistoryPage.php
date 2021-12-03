@@ -55,37 +55,57 @@
 
         <!--News feeds.-->
         <br><br><br>
-        <h2>Selamat datang, <?php foreach($tracker as $data){echo $data->username;} ?></h2>
-        <div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; margin-top: 1%; width: 88%; padding-top: 0.5%; border-radius: 10px;">
-          <h1 style="text-align: left;">Informasi Kesehatan</h1>
-        <div class="d-flex flex-row" style="overflow-x: scroll;">
-          <?php 
-						$i = 1;
-						foreach ($dataBerita as $data) {
-							echo "<div class='col-md-4'>
-                <div class='card' type='button'>
-                    <img src='Main".$i.".jpeg' class='card-img-top' alt='Main".$i.".jpeg' style='height: 180px; display: flex;'>
-                    <div class='card-body'>
-                        <p class='card-text'>".$data['title']."</p>
-                    </div>
-                </div>
-            	</div>";
-							$i++;
-						}
-					?>
-          </div>
-        </div>
+        <h2 style="margin-left: 12%;">Selamat datang, <?php foreach($tracker as $data){echo $data->username;} ?></h2>
+        <div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; margin-top: 1%; width: 75%; padding-top: 0.5%; border-radius: 10px;">
+          <h1 style="text-align: left;">Informasi Kesehatan</h1>				
+				<!--Slider-->
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
+				<ol class="carousel-indicators" style='z-index: 2'>
+					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+				</ol>
+				<div class="carousel-inner">
+				<?php
+				$i = 1;
+				$status = ' active';
+				foreach ($dataBerita as $data) {
+				echo "
+					<div class='carousel-item ".$status."' style='height:460px'  type='button'>
+						<img class='d-block w-100' src='Main".$i.".jpeg' alt='Main".$i.".jpeg' style='height:440px; border-radius: 10px; opacity:95%'>
+						<div class='carousel-caption d-none d-md-block' style='z-index:1'>
+							<h3 style='font-family: Lucida Sans; font-size: 26px;'>".$data['title']."</h3>
+							<p>...</p>
+						</div>
+					</div>";
+					$status = ' ';
+					$i++;
+				}
+				?>
+				<!--Slider Control-->
+				</div>
+				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+			</div>
 
         <!--Riwayat Kesehatan.-->
-        <div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; padding-top: 1%; padding-bottom: 1%; width: 88%; border-radius: 10px;">
+        <div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; padding-top: 1%; padding-bottom: 1%; width: 75%; border-radius: 10px;">
           <h1 style="text-align: left;">Riwayat Berobat</h1>
 					<div class="container">
-					<img type="button" src="assets/Info.png" id="helpBerobat" style="float: right; height: 35px; width: 35px; margin-top: -3%; margin-right: -4%;" 
+					<img type="button" src="assets/Info.png" id="helpBerobat" style="float: right; height: 35px; width: 35px; margin-top: -3%; margin-right: -1%;" 
 							data-toggle="modal" data-target="#helpBerobatModal">
 					<!--Search-->
 					<form>
-							<input type="text" class="form-control" id="searchKesehatan" style="float: right; width: 30%; margin-top: -3%; margin-right: 1%;">
-							<img type="button" src="assets/search.png" style="float: right; margin-top: -3%; height: 30px; margin-right: 1%; width: 30px;">
+							<input type="text" class="form-control" id="searchKesehatan" style="float: right; width: 30%; margin-top: -3%; margin-right: 2%;">
+							<img type="button" src="assets/search.png" style="float: right; margin-top: -3%; height: 30px; margin-right: 2%; width: 30px;">
 					</form>
 					</div>
 					<br>
@@ -127,14 +147,15 @@
 
 				<main>
 				<!--Hasil Pemeriksaan-->
-				<div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; padding-top: 1%; padding-bottom: 1%; width: 88%; border-radius: 10px;">
+				<div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; padding-top: 1%; padding-bottom: 1%; width: 75%; border-radius: 10px;">
           <h1 style="text-align: left;">Riwayat Pemeriksaan</h1>
 					<div class="container">
-					<img type="button" src="assets/Info.png" id="helpPemeriksaan" style="float: right; height: 35px; width: 35px; margin-top: -3%; margin-right: -4%;">
+					<img type="button" src="assets/Info.png" id="helpPemeriksaan" style="float: right; height: 35px; width: 35px; margin-top: -3%; margin-right: -1%;" 
+							data-toggle="modal" data-target="#helpPemeriksaanModal">
 					<!--Search-->
 					<form>
-							<input type="text" class="form-control" id="searchPemeriksaan" style="float: right; width: 30%; margin-top: -3%; margin-right: 1%;">
-							<img type="button" src="assets/search.png" style="float: right; margin-top: -3%; height: 30px; margin-right: 1%; width: 30px;">
+							<input type="text" class="form-control" id="searchPemeriksaan" style="float: right; width: 30%; margin-top: -3%; margin-right: 2%;">
+							<img type="button" src="assets/search.png" style="float: right; margin-top: -3%; height: 30px; margin-right: 2%; width: 30px;">
 					</form>
 					</div>
 					<br>
@@ -269,6 +290,30 @@
 						</div>
 					</div>
 				</div>
+        <!-- Riwayat Pemeriksaan Help -->
+				<div class="modal fade" id="helpPemeriksaanModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Tentang</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body" style="text-align: left">
+									<h6 class='card-title'>Jenis Pemeriksaan</h6><p id="jPemeriksaan">...</p>
+									<h6 class='card-title'>Hasil Pemeriksaan</h6><p id="hPemeriksaan">...</p>
+									<h6 class='card-title'>Normal</h6><p id="normal">...</p>
+							</div>
+							<div class="modal-footer">
+								<p>Untuk informasi lebih lanjut, kunjungi </p>
+								<button type="button" class="btn btn-primary" style="background-color: #4183D7; border: 3px solid whitesmoke; border-radius: 10px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Bantuan</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
         <div class="text-center p-4" style="background-color: #333333; color: whitesmoke;">1302194041-Leonardho R Sitanggang</div>
         </footer>
 
@@ -322,7 +367,8 @@
 					-->
 				
 				<!--Jquery-->
-				<script type="text/javascript" src="<?php echo base_url().'assets/js/getBantuanJson.js'; ?>"></script>
+				<script type="text/javascript" src="<?php echo base_url().'assets/js/getBantuanJsonRB.js'; ?>"></script>
+				<script type="text/javascript" src="<?php echo base_url().'assets/js/getBantuanJsonRP.js'; ?>"></script>
         <script>
         $(document).ready(function(){
           $('.collapsible').click(function(e) {
