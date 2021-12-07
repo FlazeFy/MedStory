@@ -17,7 +17,10 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
         <!--Source file-->
-        <link type="text/css" rel="stylesheet" href="LoginPage.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/LoginPage.css'; ?>"/>
+		<style>
+			body {background-image: url("assets/background1.png");}
+		</style>
     </head>
     <body>
 		<form method="post" action="<?php echo base_url().'landing/savedata'; ?>">

@@ -55,8 +55,8 @@
 
         <!--News feeds.-->
         <br><br><br>
-        <h2 style="margin-left: 12%;">Selamat datang, <?php foreach($tracker as $data){echo $data->username;} ?></h2>
-        <div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; margin-top: 1%; width: 75%; padding-top: 0.5%; border-radius: 10px;">
+        <h2 style="margin-left: 16%;">Selamat datang, <?php foreach($tracker as $data){echo $data->username;} ?></h2>
+        <div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; margin-top: 1%; width: 70%; padding-top: 0.5%; border-radius: 10px;">
           <h1 style="text-align: left;">Informasi Kesehatan</h1>				
 				<!--Slider-->
 					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
@@ -72,8 +72,8 @@
 				$status = ' active';
 				foreach ($dataBerita as $data) {
 				echo "
-					<div class='carousel-item ".$status."' style='height:460px'  type='button'>
-						<img class='d-block w-100' src='Main".$i.".jpeg' alt='Main".$i.".jpeg' style='height:440px; border-radius: 10px; opacity:95%'>
+					<div class='carousel-item ".$status."' style='height:430px'  type='button'>
+						<img class='d-block w-100' src='Main".$i.".jpeg' alt='Main".$i.".jpeg' style='height:410px; border-radius: 10px; opacity:95%'>
 						<div class='carousel-caption d-none d-md-block' style='z-index:1'>
 							<h3 style='font-family: Lucida Sans; font-size: 26px;'>".$data['title']."</h3>
 							<p>...</p>
@@ -97,7 +97,7 @@
 			</div>
 
         <!--Riwayat Kesehatan.-->
-        <div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; padding-top: 1%; padding-bottom: 1%; width: 75%; border-radius: 10px;">
+        <div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; padding-top: 1%; padding-bottom: 1%; width: 70%; border-radius: 10px;">
           <h1 style="text-align: left;">Riwayat Berobat</h1>
 					<div class="container">
 					<img type="button" src="assets/Info.png" id="helpBerobat" style="float: right; height: 35px; width: 35px; margin-top: -3%; margin-right: -1%;" 
@@ -109,45 +109,69 @@
 					</form>
 					</div>
 					<br>
-        <div class="row">
-        
-            <div class="card-deck" style="margin: 10px;">
-						<?php 
-										$i = 1;
-										foreach ($dataBerobat as $data) {
-											echo "<div class='card'>
-										<div class='card-header bg-white'>
-												<img class='card-img-top' src='assets/doc".$i.".jpg' alt='Card image cap' style='width: 60px; height: 60px; margin-left: 50px;'>
-												<div style='float: left; margin-top: 20px;'><h4 style='color: #4183D7;'>".$data['namaDokter']."</h4></div>
-												<div style='float: right; margin-top: 20px;'><h4 style='color: #CCD453;'>".$data['spesialis']."</h4></div>
-										</div>
-											<div class='card-body'>
-												<h5 class='card-title' style='font-weight: bold; font-size: 18px;'>".$data['penyakit']."</h5>
-												<br>
-												<h6 class='card-title'>Detail Penyakit</h6>
-												<p class='card-text'>".$data['sejak']."</p>
-												<p class='card-text'>Keluhan : </p>
-												<p class='card-text'>".$data['keluhan']."</p>
-												<h6 class='card-title'>Diagnosa</h6>
-												<p class='card-text'>".$data['diagnosa']."</p>
-												<h6 class='card-title'>Solusi</h6>
-												<p class='card-text'>".$data['solusi']."</p>
-											</div>
-											<div class='card-footer'>
-												<small class='text-muted' style='float: left;'>".$data['tanggal']."</small>
-												<small class='text-muted' style='float: right;'>".$data['lokasi']."</small>
-										</div></div>";
-										$i++;
-								};		
-						?>
-						</div>
-        </div>
+          <?php
+            $newdeck = 1;
+            $i = 1;
+            foreach ($dataBerobat as $data){
+            if ($newdeck % 3 != 0){
+              echo "<div class='row'> 
+                <div class='card-deck' style='margin: 10px;'>
+                <div class='card'>
+                <div class='card-header' style='background-color: #22A7F0'>
+                  <img class='card-img-top' src='assets/doc".$i.".jpg' alt='Card image cap' style='width: 60px; height: 60px; margin-left: 50px;'>
+                  <div style='float: left; margin-top: 20px;'><h4 style='color: whitesmoke;'>".$data['namaDokter']."</h4></div>
+                  <div style='float: right; margin-top: 20px;'><h4 style='color: whitesmoke;'>".$data['spesialis']."</h4></div>
+                </div>
+                <div class='card-body'>
+                  <h5 class='card-title' style='font-weight: bold; font-size: 18px;'>".$data['penyakit']."</h5>
+                  <br>
+                  <h6 class='card-title'>Detail Penyakit</h6>
+                  <p class='card-text'>".$data['sejak']."</p>
+                  <p class='card-text'>Keluhan : </p>
+                  <p class='card-text'>".$data['keluhan']."</p>
+                  <h6 class='card-title'>Diagnosa</h6>
+                  <p class='card-text'>".$data['diagnosa']."</p>
+                  <h6 class='card-title'>Solusi</h6>
+                  <p class='card-text'>".$data['solusi']."</p>
+                </div>
+                <div class='card-footer'>
+                  <small class='text-muted' style='float: left;'>".$data['tanggal']."</small>
+                  <small class='text-muted' style='float: right; text-decoration: underline; font-weight:bold;' type='button' data-toggle='popover' title='+62 ".$data['kontak']."' data-content='".$data['alamat']."'>".$data['lokasi']."</small>
+                </div></div>";
+              } else {
+                echo "<div class='card'>
+                <div class='card-header' style='background-color: #22A7F0'>
+                  <img class='card-img-top' src='assets/doc".$i.".jpg' alt='Card image cap' style='width: 60px; height: 60px; margin-left: 50px;'>
+                  <div style='float: left; margin-top: 20px;'><h4 style='color: whitesmoke;'>".$data['namaDokter']."</h4></div>
+                  <div style='float: right; margin-top: 20px;'><h4 style='color: whitesmoke;'>".$data['spesialis']."</h4></div>
+                </div>
+                <div class='card-body'>
+                  <h5 class='card-title' style='font-weight: bold; font-size: 18px;'>".$data['penyakit']."</h5>
+                  <br>
+                  <h6 class='card-title'>Detail Penyakit</h6>
+                  <p class='card-text'>".$data['sejak']."</p>
+                  <p class='card-text'>Keluhan : </p>
+                  <p class='card-text'>".$data['keluhan']."</p>
+                  <h6 class='card-title'>Diagnosa</h6>
+                  <p class='card-text'>".$data['diagnosa']."</p>
+                  <h6 class='card-title'>Solusi</h6>
+                  <p class='card-text'>".$data['solusi']."</p>
+                </div>
+                <div class='card-footer'>
+                  <small class='text-muted' style='float: left;'>".$data['tanggal']."</small>
+                  <small class='text-muted' style='float: right; text-decoration: underline; font-weight:bold;' type='button' data-toggle='popover' title='+62 ".$data['kontak']."' data-content='".$data['alamat']."'>".$data['lokasi']."</small>
+                </div></div>";
+                };		
+                $i++;
+                $newdeck++;
+              };
+            ?>
         </div>
         </main>
 
 				<main>
 				<!--Hasil Pemeriksaan-->
-				<div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; padding-top: 1%; padding-bottom: 1%; width: 75%; border-radius: 10px;">
+				<div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; padding-top: 1%; padding-bottom: 1%; width: 70%; border-radius: 10px;">
           <h1 style="text-align: left;">Riwayat Pemeriksaan</h1>
 					<div class="container">
 					<img type="button" src="assets/Info.png" id="helpPemeriksaan" style="float: right; height: 35px; width: 35px; margin-top: -3%; margin-right: -1%;" 
@@ -381,6 +405,9 @@
                   "transform": "rotate(180deg)"            //Others
               });
           });
+					$(function () {
+						$('[data-toggle="popover"]').popover()
+					})
         })
         </script>
     </body>

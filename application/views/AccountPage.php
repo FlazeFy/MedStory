@@ -1,6 +1,9 @@
 <!--Leonardho R. Sitanggang
     1302194041  SE-43-03
 -->
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -52,9 +55,8 @@
 	    </div>
             <main>
                 <br><br>
-                <div class="container-fluid" id="card-car" style="margin-bottom: 2%; padding-top: 1%; width: 92%;">
+                <div class="container" id="card-car" style="margin-bottom: 2%; padding-top: 1%;">
                   <h2>Profil</h2>
-                <form>
                 <div class="row gutters-sm">
                     <div class="col-md-4 mb-3">
                       <div class="card" style="background-color: #333333;">
@@ -94,7 +96,7 @@
 																	}
 																	?></p>
                               <button class="btn btn-primary" style="background-color: #4183D7; border: none;">Ganti Foto</button>
-                              <button class="btn btn-primary" style="background-color: #22A7F0; border: none;" onclick="editEnabled();">Edit Akun</button>
+                              <button class="btn btn-primary" style="background-color: #22A7F0; border: none;" id="click">Edit Akun</button>
                             </div>
                             <hr>
                             <h4 style="color: white;">Statistik</h4>
@@ -120,14 +122,25 @@
                       
                     </div>
                     <div class="col-md-8">
+                    <form method="post" action="<?php echo base_url().'account/ubah';?>">
                       <!--Text entry edit akun.-->
+											<input hidden class="form-control" id ="Inputan" type="text" name="id" value="<?php
+													$i = 0;
+													foreach ($dataUser as $data){
+														if ($data['namaPengguna'] == 'flazefy'){
+															echo $data['id_user'];
+														} else {
+															$i++;  
+														}
+													}
+											?>" id="id"></input>
                       <div class="card mb-3">
                         <div class="card-body">
                           <div class="row">
                             <div class="col-sm-3">
                               <h6 class="h6">Nama Lengkap</h6>
                             </div>
-                            <input id ="Inputan" type="text" placeholder="<?php
+                            <input class="form-control" id ="Inputan" type="text" name="username" value="<?php
 																	$i = 0;
 																	foreach ($dataUser as $data){
 																		if ($data['namaPengguna'] == 'flazefy'){
@@ -136,14 +149,14 @@
 																			$i++;  
 																		}
 																	}
-																	?>" id="fullname" disabled></input>
+																	?>" id="fullname"></input>
                           </div>
                           <hr>
                           <div class="row">
                             <div class="col-sm-3">
                               <h6 class="h6">Email</h6>
                             </div>
-                            <input id ="Inputan" type="email" placeholder="<?php
+                            <input class="form-control" id ="Inputan" type="email" name="email" value="<?php
 																	$i = 0;
 																	foreach ($dataUser as $data){
 																		if ($data['namaPengguna'] == 'flazefy'){
@@ -152,14 +165,14 @@
 																			$i++;  
 																		}
 																	}
-																	?>" id="email" disabled></input>
+																	?>" id="email"></input>
                           </div>
                           <hr>
                           <div class="row">
                             <div class="col-sm-3">
                               <h6 class="h6">Nomor Telepon</h6>
                             </div>
-                            <input id ="Inputan" type="text" placeholder="<?php
+                            <input class="form-control" id ="Inputan" type="text" name="nomorPonsel" value="<?php
 																	$i = 0;
 																	foreach ($dataUser as $data){
 																		if ($data['namaPengguna'] == 'flazefy'){
@@ -168,14 +181,14 @@
 																			$i++;  
 																		}
 																	}
-																	?>" id="ponsel" disabled></input>
+																	?>" id="ponsel"></input>
                           </div>
                           <hr>
                           <div class="row">
                             <div class="col-sm-3">
                               <h6 class="h6">Password</h6>
                             </div>
-                            <input id ="Inputan" type="password" placeholder="<?php
+                            <input class="form-control" id ="Inputan" type="password" name="password" value="<?php
 																	$i = 0;
 																	foreach ($dataUser as $data){
 																		if ($data['namaPengguna'] == 'flazefy'){
@@ -184,7 +197,7 @@
 																			$i++;  
 																		}
 																	}
-																	?>" id="pass" disabled></input>
+																	?>" id="pass"></input>
                           </div>
                           <hr>
 
@@ -198,7 +211,7 @@
                                 <div class="col-sm-3">
                                   <h6 class="h6">Alamat</h6>
                                 </div>
-                                <input id ="Inputan" type="text" placeholder="<?php
+                                <input class="form-control" id ="Inputan" type="text" name="alamat" value="<?php
 																	$i = 0;
 																	foreach ($dataUser as $data){
 																		if ($data['namaPengguna'] == 'flazefy'){
@@ -207,14 +220,14 @@
 																			$i++;  
 																		}
 																	}
-																	?>" id="add" disabled></input>
+																	?>" id="add"></input>
                               </div>
                               <hr>
                               <div class="row">
                                 <div class="col-sm-3">
                                   <h6 class="h6">Pekerjaan</h6>
                                 </div>
-                                <input id ="Inputan" type="email" placeholder="<?php
+                                <input class="form-control" id ="Inputan" type="text" name="pekerjaan" value="<?php
 																	$i = 0;
 																	foreach ($dataUser as $data){
 																		if ($data['namaPengguna'] == 'flazefy'){
@@ -223,14 +236,14 @@
 																			$i++;  
 																		}
 																	}
-																	?>" id="job" disabled></input>
+																	?>" id="job"></input>
                               </div>
                               <hr>
                               <div class="row">
                                 <div class="col-sm-3">
                                   <h6 class="h6">Tinggi & Berat Badan</h6>
                                 </div>
-                                <input id ="Inputan" type="number" placeholder="<?php
+                                <input class="form-control" id ="Inputan" type="number" name="tinggiBadan" value="<?php
 																	$i = 0;
 																	foreach ($dataUser as $data){
 																		if ($data['namaPengguna'] == 'flazefy'){
@@ -239,9 +252,9 @@
 																			$i++;  
 																		}
 																	}
-																	?>" id="tBadan" disabled style="width: 80px;"></input>
+																	?>" id="tBadan" style="width: 80px;"></input>
                                 <a class="sat" style=" margin-right: 50px;">Cm</a>
-                                <input id ="Inputan" type="number" placeholder="<?php
+                                <input class="form-control" id ="Inputan" type="number" name="beratBadan" value="<?php
 																	$i = 0;
 																	foreach ($dataUser as $data){
 																		if ($data['namaPengguna'] == 'flazefy'){
@@ -250,20 +263,20 @@
 																			$i++;  
 																		}
 																	}
-																	?>" id="bBadan" disabled style="width: 80px;"></input>
+																	?>" id="bBadan" style="width: 80px;"></input>
                                 <a class="sat" style=" margin-right: 50px;">Kg</a>
                               </div>
                             </div>
                           </div>
                         </div>
-
+												
                           <hr>
                           <div class="container" style="background-color:#00B32C; border-radius: 15px; width: 80%;">
                             <br>
                             <p style="color: white;">Selesaikan pendaftaran dengan mengunggah foto KTP dan foto diri (selfie)</p>
                             <p style="font-style: italic; font-size: 12px; color: white;">0 dari 2 berkas terkumpul</p>
                             <input type="file" id="myFile" name="filename" style="font-size: 12px;">
-                            <button id="uploadFile" type="submit" style="font-size: 12px;"><img src="assets/Upload.png" style="width:30px;">Unggah</button>
+                            <button id="uploadFile" type="" style="font-size: 12px;"><img src="assets/Upload.png" style="width:30px;">Unggah</button>
                             <img src="assets/Id Card.png" style="width:60px; float: right;">
                             <br><br>
                           </div>
@@ -273,13 +286,13 @@
                                 <img src="assets/Info.png" style="width:20px; float: left;">
                             <p style="float: left; color: #4183D7; font-size: 13px;">Password harus memiliki min 8 karakter, 1 huruf
                                 kapital, dan 1 angka.</p>
-                              <button id="submit">Simpan Perubahan</button>
+                              <button type="submit" id="submit">Simpan Perubahan</button>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </form>
               </div>
+							</form>
             </main>
         <!-- Footer -->
         <footer class="text-center text-lg-start bg-light text-muted">
@@ -366,10 +379,7 @@
 										} else {
 												alert("Sign-Out dibatalkan");
 										}
-								}
-								function editEnabled(){
-										document.getElementById("Inputan").disabled = false;
-								}
+							}
         		</script>
 						
 						<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

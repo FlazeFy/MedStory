@@ -4,6 +4,7 @@
 	class historyModel extends CI_Model {
 		//Riwayat kesehatan
 		public function get_data_berobat(){
+			$this->db->order_by('tanggal','DESC');
 			$data = $this->db->get('riwayatkesehatan_flazefy');
 			return $data->result_array();
 		}

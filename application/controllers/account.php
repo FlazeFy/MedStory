@@ -12,5 +12,19 @@
 			$data['tracker']= $this->accountModel->usertracker();
 			$this->load->view('AccountPage', $data);
 		}
+		public function ubah(){
+			$data = [
+				"namaLengkap" => $this->input->post('username'),
+				"email" => $this->input->post('email'),
+				"nomorPonsel" => $this->input->post('nomorPonsel'),
+				"password" => $this->input->post('password'),
+				"alamat" => $this->input->post('alamat'),
+				"pekerjaan" => $this->input->post('pekerjaan'),
+				"tinggiBadan" => $this->input->post('tinggiBadan'),
+				"beratBadan" => $this->input->post('beratBadan')
+			];
+			$this->accountModel->ubahData($data, 'pengguna');
+			redirect('account');
+		}
 	}
 ?>

@@ -14,11 +14,14 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
         <!--Source file-->
-        <link type="text/css" rel="stylesheet" href="LoginPage.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/LoginPage.css'; ?>"/>
+		<style>
+			body {background-image: url("assets/background1.png");}
+		</style>
     </head>
     <body>
     <main>
-        <form>
+        <form method="post" action="<?php echo base_url().'createAcc/newUser'; ?>">
             <div class="third container-fluid" style="width: 80%; left: 8%; top: 4%;">
                 <div class="row">
                     <div class="col-md-3 border-right">
@@ -40,14 +43,14 @@
                             <h4 class="text-left">Data Diri</h4>
                             <div class="row mt-2">
                                 <!--Data diri.-->
-                                <div class="col-md-12"><h6 >Nama Lengkap</h6><input type="username" class="form-control" id="fullname" value=""></div>                            
-                                <div class="col-md-12"><h6>Nomor Induk Kependudukan</h6><input type="text" class="form-control" id="nik" value=""></div>
-                                <div class="col-md-12"><h6>Tempat Lahir</h6><input type="text" class="form-control" id="tLahir" value=""></div>
-                                <div class="col-md-12"><h6>Tanggal Lahir</h6><input type="date" class="form-control" id="tglLahir" value=""></div>
-                                <div class="col-md-12"><h6>Alamat</h6><input type="text" class="form-control" id="add" value=""></div>
-                                <div class="col-md-12"><h6>Pekerjaan</h6><input type="text" class="form-control" id="job" value=""></div>
-                                <div class="col-md-6"><h6>Tinggi Badan (Cm)</h6><input type="number" class="form-control" id="tBadan" value=""></div>
-                                <div class="col-md-6"><h6>Berat Badan (Kg)</h6><input type="number" class="form-control" id="bBadan" value=""></div>
+                                <div class="col-md-12"><h6 >Nama Lengkap</h6><input type="username" class="form-control" name="fullname" value=""></div>                            
+                                <div class="col-md-12"><h6>Nomor Induk Kependudukan</h6><input type="text" class="form-control" name="nik" value=""></div>
+                                <div class="col-md-12"><h6>Tempat Lahir</h6><input type="text" class="form-control" name="tLahir" value=""></div>
+                                <div class="col-md-12"><h6>Tanggal Lahir</h6><input type="date" class="form-control" name="tglLahir" value=""></div>
+                                <div class="col-md-12"><h6>Alamat</h6><input type="text" class="form-control" name="add" value=""></div>
+                                <div class="col-md-12"><h6>Pekerjaan</h6><input type="text" class="form-control" name="job" value=""></div>
+                                <div class="col-md-6"><h6>Tinggi Badan (Cm)</h6><input type="number" class="form-control" name="tBadan" value=""></div>
+                                <div class="col-md-6"><h6>Berat Badan (Kg)</h6><input type="number" class="form-control" name="bBadan" value=""></div>
                                 <div class="col-md-12" id="jenisKelamin"><h6>Jenis Kelamin</h6>
                                     <fieldset>
                                     <input type="radio" name="cat_input" class="radioB" id="radioB" value="Pria">Pria</input>
@@ -61,17 +64,17 @@
                         <div class="p-3 py-5">
                             <!--Data akun.-->
                             <h4 class="text-left">Data Akun</h4>
-                            <div class="col-md-12"><h6>Nama Pengguna</h6><input type="text" class="form-control" id="username" value=""></div>
-                            <div class="col-md-12"><h6>Email</h6><input type="email" class="form-control" id="email" value=""></div>
-                            <div class="col-md-12"><h6>Nomor Ponsel</h6><input type="text" class="form-control" id="ponsel" value=""></div>
-                            <div class="col-md-12"><h6>Password</h6><input type="password" class="form-control" id="pass" value=""></div>
+                            <div class="col-md-12"><h6>Nama Pengguna</h6><input type="text" class="form-control" name="username" value=""></div>
+                            <div class="col-md-12"><h6>Email</h6><input type="email" class="form-control" name="email" value=""></div>
+                            <div class="col-md-12"><h6>Nomor Ponsel</h6><input type="text" class="form-control" name="ponsel" value=""></div>
+                            <div class="col-md-12"><h6>Password</h6><input type="password" class="form-control" name="pass" value=""></div>
                             <div class="col-md-12"><h6>Konfirmasi Password</h6><input type="password" class="form-control" id="passCon" value=""></div><br>
                             <div class="col-md-12">
                                 <img src="assets/Info.png" style="width:20px; float: left;">
                                 <p style="color: #4183D7; font-size: 13px;">Password harus memiliki min 8 karakter, 1 huruf
                                 kapital, dan 1 angka.</p><br>
                             <!--Button submit.-->
-                            <div class="mt-5 text-center"><button class="ButtonB" type="button" onclick="cekAkun()">Selanjutnya</button></div>
+                            <div class="mt-5 text-center"><button class="ButtonB" type="submit" onclick="cekAkun()">Selanjutnya</button></div>
                         </div>
                     </div>
                 </div>

@@ -14,6 +14,14 @@
 			$this->db->order_by('id_login desc');
 			$this->db->limit('1');
 			return $this->db->get()->result();
+		}
+		//Ubah data
+		function ubahData($data)
+		{
+			$id = $this->input->post('id');
+			$this->db->where('id_user', $id);
+			$this->db->update('pengguna', $data);
+			redirect('account');
 		}	
 	}
 ?>
