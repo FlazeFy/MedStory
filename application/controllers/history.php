@@ -10,7 +10,6 @@
 			$data = [];
 			$data['dataBerobat']= $this->historyModel->get_data_berobat();
 			$data['dataBerita']= $this->historyModel->get_data_berita();
-			$data['tracker']= $this->historyModel->usertracker();
 			$this->load->view('HistoryPage', $data);
 		}
 	}

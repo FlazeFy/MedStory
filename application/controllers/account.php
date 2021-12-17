@@ -9,7 +9,6 @@
 		public function index(){
 			$data = [];
 			$data['dataUser']= $this->accountModel->get_data_user();
-			$data['tracker']= $this->accountModel->usertracker();
 			$this->load->view('AccountPage', $data);
 		}
 		public function ubah(){

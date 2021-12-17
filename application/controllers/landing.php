@@ -12,19 +12,13 @@
 			$this->load->view('LandingPage', $data);
 		}
 		/*Insert*/
-		public function savedata()
-		{
-			$id_login = "NULL";
-			$username = $this->input->post('username');
-			$password = $this->input->post('password');
-
+		public function savedata(){
 			$data = array(
-				'id_login' => $id_login,
-				'username' => $username,
-				'password' => $password
+				'id_login' => 'NULL',
+				'username' => $this->input->post('username'),
+				'password' => $this->input->post('password')
 			);
 			$this->landingModel->recordlogin($data, 'loginuser');
-			redirect('history');
 		}
 	}
 ?>

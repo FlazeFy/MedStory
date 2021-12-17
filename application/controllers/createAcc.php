@@ -12,7 +12,7 @@
 		}
 		/*Insert Buat akun*/
 		public function newUser(){
-			$data = [
+			$data = array(
 				//Data diri
 				"namaLengkap" => $this->input->post('fullname'),
 				"nik" => $this->input->post('nik'),
@@ -26,49 +26,9 @@
 				"namaPengguna" => $this->input->post('username'),
 				"email" => $this->input->post('email'),
 				"nomorPonsel" => $this->input->post('ponsel'),
-				"password" => $this->input->post('pass')
-			];
-			$this->createAccModel->buat($data, 'pengguna');
-		}
-		/*Insert Login*/
-		public function savedata()
-		{
-			$id_login = "NULL";
-			$username = $this->input->post('username');
-			$password = $this->input->post('pass');
-
-			$data = array(
-				'id_login' => $id_login,
-				'username' => $username,
-				'password' => $password
+				"password" => $this->input->post('password')
 			);
-			$this->createAccModel->recordlogin($data, 'loginuser');
-		}
-		/*Create data kesehatan*/
-		public function newHistory(){
-			/*
-			$fields = array(
-				'idRiwayat' => array(
-						'type' => 'INT',
-						'constraint' => 5,
-						'unsigned' => TRUE,
-						'auto_increment' => TRUE
-				),
-				'blog_title' => array(
-						'type' => 'VARCHAR',
-						'constraint' => '100',
-						'unique' => TRUE,
-				),
-				'blog_author' => array(
-						'type' =>'VARCHAR',
-						'constraint' => '100',
-						'default' => 'King of Town',
-				),
-				'blog_description' => array(
-						'type' => 'TEXT',
-						'null' => TRUE,
-				),
-			);*/
+			$this->createAccModel->buat($data, 'pengguna');
 		}
 	}
 ?>
