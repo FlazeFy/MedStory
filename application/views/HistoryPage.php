@@ -27,7 +27,7 @@
                 <li  id="active"><a href="">Riwayat</a></li>
                 <li><a href="">Forum</a></li>
                 <li style="float:right"><a type="button" id="signOut" onclick="signOut()">Ganti Akun</a></li>
-                <li style="float:right"><a id="Profil" href="account" style="font-size:14px"><img id="MyData" src="assets/MyData.png"> <?php foreach($tracker as $data){echo $data->username;} ?></a></li>
+                <li style="float:right"><a id="Profil" href="account" style="font-size:14px"><img id="MyData" src="assets/MyData.png"> <?= $data = $this->session->userdata('userTrack'); ?></a></li>
                 <div id="ddParent">
                     <button id="dropbutton"><img id="set" src="assets/Setting.png"></button>
                         <!--DropDown menu navigation-->
@@ -55,32 +55,35 @@
 
         <!--News feeds.-->
         <br><br><br>
-        <h2 style="margin-left: 16%;">Selamat datang, <?php foreach($tracker as $data){echo $data->username;} ?></h2>
+        <h2 style="margin-left: 16%;">Selamat datang, <?= $data = $this->session->userdata('userTrack'); ?></h2>
         <div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; margin-top: 1%; width: 70%; padding-top: 0.5%; border-radius: 10px;">
           <h1 style="text-align: left;">Informasi Kesehatan</h1>				
 				<!--Slider-->
 					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
 				<ol class="carousel-indicators" style='z-index: 2'>
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+				<?php 
+					$status =' active';
+					$i = 0;
+					foreach ($dataBerita as $data) {
+						echo "<li data-target='#carouselExampleIndicators' data-slide-to='".$i."' class='".$status."'></li>";
+						$status = ' ';
+						$i++;
+					}
+				?>
 				</ol>
 				<div class="carousel-inner">
 				<?php
-				$i = 1;
 				$status = ' active';
 				foreach ($dataBerita as $data) {
 				echo "
 					<div class='carousel-item ".$status."' style='height:430px'  type='button'>
-						<img class='d-block w-100' src='Main".$i.".jpeg' alt='Main".$i.".jpeg' style='height:410px; border-radius: 10px; opacity:95%'>
+						<img class='d-block w-100' src='assets/newsImage/Main".$data['idBerita'].".jpeg' alt='Main".$data['idBerita'].".jpeg' style='height:410px; border-radius: 10px; opacity:95%'>
 						<div class='carousel-caption d-none d-md-block' style='z-index:1'>
-							<h3 style='font-family: Lucida Sans; font-size: 26px;'>".$data['title']."</h3>
-							<p>...</p>
+							<h3 style='font-family: Lucida Sans; font-size: 26px; background: rgba(130, 130, 130, 0.5); border-radius:5px;'>".$data['title']."</h3>
+							<p>".$data['tanggal']."</p>
 						</div>
 					</div>";
 					$status = ' ';
-					$i++;
 				}
 				?>
 				<!--Slider Control-->

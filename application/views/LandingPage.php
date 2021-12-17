@@ -1,9 +1,6 @@
 <!--Leonardho R. Sitanggang
     1302194041  SE-43-03
 -->
-<?php
-	session_start();
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,6 +22,11 @@
     <body>
 		<form method="post" action="<?php echo base_url().'landing/savedata'; ?>">
           <!--Login section-->
+		  <?php if(isset($error_message)) { ?>
+			<div class="alert alert-danger" role="alert">
+				<p><?= $error_message ?></p>
+			</div>
+			<?php } ?>
             <div class="third container-fluid" style="width: 50%; left: 45%; top: 25%;">
                 <div class="row" style="height: auto;">
                     <div class="col border-right">

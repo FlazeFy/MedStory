@@ -67,7 +67,7 @@
                             <div class="col-md-12"><h6>Nama Pengguna</h6><input type="text" class="form-control" name="username" value=""></div>
                             <div class="col-md-12"><h6>Email</h6><input type="email" class="form-control" name="email" value=""></div>
                             <div class="col-md-12"><h6>Nomor Ponsel</h6><input type="text" class="form-control" name="ponsel" value=""></div>
-                            <div class="col-md-12"><h6>Password</h6><input type="password" class="form-control" name="pass" value=""></div>
+                            <div class="col-md-12"><h6>Password</h6><input type="password" class="form-control" name="password" value=""></div>
                             <div class="col-md-12"><h6>Konfirmasi Password</h6><input type="password" class="form-control" id="passCon" value=""></div><br>
                             <div class="col-md-12">
                                 <img src="assets/Info.png" style="width:20px; float: left;">

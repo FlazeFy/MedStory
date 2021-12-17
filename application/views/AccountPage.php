@@ -1,9 +1,7 @@
 <!--Leonardho R. Sitanggang
     1302194041  SE-43-03
 -->
-<?php
-	session_start();
-?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,7 +26,7 @@
                 <li><a href="history">Riwayat</a></li>
                 <li><a href="">Forum</a></li>
                 <li style="float:right"><a type="button" id="signOut" onclick="signOut()">Ganti Akun</a></li>
-                <li style="float:right;"><a id="Profil" href="" style="font-size:14px"><img id="MyData" src="assets/MyData.png"> <?php foreach($tracker as $data){echo $data->username;} ?></a></li>
+                <li style="float:right;"><a id="Profil" href="" style="font-size:14px"><img id="MyData" src="assets/MyData.png"> <?= $data = $this->session->userdata('userTrack'); ?></a></li>
                 <div id="ddParent">
                     <button id="dropbutton"><img id="set" src="assets/Setting.png"></button>
                         <!--DropDown menu navigation-->
@@ -63,36 +61,21 @@
                         <div class="card-body">
                           <!--Mini profil.-->
                           <div class="d-flex flex-column align-items-center text-center">
-                            <img src="assets/user_<?php foreach($tracker as $data){echo $data->username;} ?>.jpg" alt="Admin" class="rounded-circle img-fluid" style="width:200px; height:200px;">
+                            <img src="assets/uploads/user_<?php foreach($dataUser as $data){echo $data['namaPengguna'];} ?>.jpg" alt="Admin" class="rounded-circle img-fluid" style="width:200px; height:200px;">
                             <div class="mt-3">
                               <h4 style="color: white;"><?php
-																	$i = 0;
 																	foreach ($dataUser as $data){
-																		if ($data['namaPengguna'] == 'flazefy'){
 																			echo $data['namaLengkap'];
-																		} else {
-																			$i++;  
-																		}
 																	}
 																	?></h4>
                               <p class="text-secondary" style="color: white;"><?php
-																	$i = 0;
-																	foreach ($dataUser as $data){
-																		if ($data['namaPengguna'] == 'flazefy'){
+																	foreach ($dataUser as $data){											
 																			echo $data['pekerjaan'];
-																		} else {
-																			$i++;  
-																		}
 																	}
 																	?></p>
                               <p class="text-muted font-size-sm" style="color: white;"><?php
-																	$i = 0;
-																	foreach ($dataUser as $data){
-																		if ($data['namaPengguna'] == 'flazefy'){
+																	foreach ($dataUser as $data){		
 																			echo $data['alamat'];
-																		} else {
-																			$i++;  
-																		}
 																	}
 																	?></p>
                               <button class="btn btn-primary" style="background-color: #4183D7; border: none;">Ganti Foto</button>
@@ -118,20 +101,14 @@
 														</div>
                         </div>
                       </div>
-	
                       
                     </div>
                     <div class="col-md-8">
                     <form method="post" action="<?php echo base_url().'account/ubah';?>">
                       <!--Text entry edit akun.-->
 											<input hidden class="form-control" id ="Inputan" type="text" name="id" value="<?php
-													$i = 0;
-													foreach ($dataUser as $data){
-														if ($data['namaPengguna'] == 'flazefy'){
+													foreach ($dataUser as $data){	
 															echo $data['id_user'];
-														} else {
-															$i++;  
-														}
 													}
 											?>" id="id"></input>
                       <div class="card mb-3">
@@ -141,13 +118,8 @@
                               <h6 class="h6">Nama Lengkap</h6>
                             </div>
                             <input class="form-control" id ="Inputan" type="text" name="username" value="<?php
-																	$i = 0;
 																	foreach ($dataUser as $data){
-																		if ($data['namaPengguna'] == 'flazefy'){
 																			echo $data['namaLengkap'];
-																		} else {
-																			$i++;  
-																		}
 																	}
 																	?>" id="fullname"></input>
                           </div>
@@ -157,13 +129,8 @@
                               <h6 class="h6">Email</h6>
                             </div>
                             <input class="form-control" id ="Inputan" type="email" name="email" value="<?php
-																	$i = 0;
-																	foreach ($dataUser as $data){
-																		if ($data['namaPengguna'] == 'flazefy'){
+																	foreach ($dataUser as $data){	
 																			echo $data['email'];
-																		} else {
-																			$i++;  
-																		}
 																	}
 																	?>" id="email"></input>
                           </div>
@@ -173,13 +140,8 @@
                               <h6 class="h6">Nomor Telepon</h6>
                             </div>
                             <input class="form-control" id ="Inputan" type="text" name="nomorPonsel" value="<?php
-																	$i = 0;
 																	foreach ($dataUser as $data){
-																		if ($data['namaPengguna'] == 'flazefy'){
 																			echo $data['nomorPonsel'];
-																		} else {
-																			$i++;  
-																		}
 																	}
 																	?>" id="ponsel"></input>
                           </div>
@@ -189,13 +151,8 @@
                               <h6 class="h6">Password</h6>
                             </div>
                             <input class="form-control" id ="Inputan" type="password" name="password" value="<?php
-																	$i = 0;
-																	foreach ($dataUser as $data){
-																		if ($data['namaPengguna'] == 'flazefy'){
+																	foreach ($dataUser as $data){	
 																			echo $data['password'];
-																		} else {
-																			$i++;  
-																		}
 																	}
 																	?>" id="pass"></input>
                           </div>
@@ -212,13 +169,8 @@
                                   <h6 class="h6">Alamat</h6>
                                 </div>
                                 <input class="form-control" id ="Inputan" type="text" name="alamat" value="<?php
-																	$i = 0;
 																	foreach ($dataUser as $data){
-																		if ($data['namaPengguna'] == 'flazefy'){
 																			echo $data['alamat'];
-																		} else {
-																			$i++;  
-																		}
 																	}
 																	?>" id="add"></input>
                               </div>
@@ -228,13 +180,8 @@
                                   <h6 class="h6">Pekerjaan</h6>
                                 </div>
                                 <input class="form-control" id ="Inputan" type="text" name="pekerjaan" value="<?php
-																	$i = 0;
 																	foreach ($dataUser as $data){
-																		if ($data['namaPengguna'] == 'flazefy'){
 																			echo $data['pekerjaan'];
-																		} else {
-																			$i++;  
-																		}
 																	}
 																	?>" id="job"></input>
                               </div>
@@ -244,24 +191,14 @@
                                   <h6 class="h6">Tinggi & Berat Badan</h6>
                                 </div>
                                 <input class="form-control" id ="Inputan" type="number" name="tinggiBadan" value="<?php
-																	$i = 0;
-																	foreach ($dataUser as $data){
-																		if ($data['namaPengguna'] == 'flazefy'){
+																	foreach ($dataUser as $data){							
 																			echo $data['tinggiBadan'];
-																		} else {
-																			$i++;  
-																		}
 																	}
 																	?>" id="tBadan" style="width: 80px;"></input>
                                 <a class="sat" style=" margin-right: 50px;">Cm</a>
                                 <input class="form-control" id ="Inputan" type="number" name="beratBadan" value="<?php
-																	$i = 0;
 																	foreach ($dataUser as $data){
-																		if ($data['namaPengguna'] == 'flazefy'){
 																			echo $data['beratBadan'];
-																		} else {
-																			$i++;  
-																		}
 																	}
 																	?>" id="bBadan" style="width: 80px;"></input>
                                 <a class="sat" style=" margin-right: 50px;">Kg</a>

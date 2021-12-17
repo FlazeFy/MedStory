@@ -4,23 +4,17 @@
 	class historyModel extends CI_Model {
 		//Riwayat kesehatan
 		public function get_data_berobat(){
+			$this->db->select('*');
+			$this->db->from('riwayatkesehatan');
+			$condition = $this->session->userdata('userTrack');
 			$this->db->order_by('tanggal','DESC');
-			$data = $this->db->get('riwayatkesehatan_flazefy');
-			return $data->result_array();
+			$this->db->where('namaPengguna',$condition);
+			return $data = $this->db->get()->result_array();
 		}
 		//News Feed
 		public function get_data_berita(){
 			$data = $this->db->get('newsfeed');
 			return $data->result_array();
 		}
-		//Hubungkan data ke tiap halaman
-		public function usertracker()
-		{
-			$this->db->select('*');
-			$this->db->from('loginuser');
-			$this->db->order_by('id_login desc');
-			$this->db->limit('1');
-			return $this->db->get()->result();
-		}	
 	}
 ?>
