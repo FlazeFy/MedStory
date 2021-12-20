@@ -181,7 +181,6 @@ p {
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
 	-o-border-radius: 5px;
-	overflow: scroll;
 }
 
 .container-vaksinasi {
@@ -195,16 +194,14 @@ p {
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
 	-o-border-radius: 5px;
-	overflow: scroll;
 }
 
 .list-content {
 	width: 75%;
-	height: auto;
+	height: 500px;
 	margin: auto;
 	padding: 25px;
 	background-color: #fff;
-	overflow: scroll;
 }
 
 #main ul {

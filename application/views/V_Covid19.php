@@ -8,7 +8,20 @@
     <title>Covid-19</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/Covid19.css'; ?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/Covid19.css'; ?>" media="all" />
+    <style>
+        .container-vaksinasi {
+            width: 85%;
+        }
+
+        .container-rujukan {
+            width: 85%;
+        }
+
+        .list-content {
+            width: 85%;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +69,32 @@
             <h1>Rumah Sakit Rujukan & Tempat Karantina</h1>
             <p>Lokasi : Kota Jayapura, Papua</p>
             <div class="list-content">
-                <ul>
+                <table class="table table-bordered" id="table">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Alamat</th>
+                            <th>No HP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+
+                        foreach ($Hospital as $data) {
+                            echo "
+                                <tr>
+                                    <!--HINT UNTUK MENGHAPUS USER KALIAN DAPAT MENGGUNAKAN FORM, MENGGUNAKAN ANCHOR ATAU HREF PADA BUTTON-->
+                                        <td>" . $data['nama'] . "</td>
+                                        <td>" . $data['alamat'] . "</td>
+                                        <td>" . $data['nohp'] . "</td>
+                                    </form>
+                                </tr>";
+                        }
+
+                        ?>
+                    </tbody>
+                </table>
+                <!-- <ul>
                     <?php
                     foreach ($Hospital as $data) {
                         echo
@@ -67,14 +105,39 @@
                         </li>";
                     }
                     ?>
-                </ul>
+                </ul> -->
             </div>
         </div>
         <div class="container-vaksinasi">
             <h1>Tempat Vaksinasi</h1>
             <p>Lokasi : Kota Jayapura, Papua</p>
             <div class="list-content">
-                <ul>
+                <table class="table table-bordered" id="table">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Alamat</th>
+                            <th>No HP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+
+                        foreach ($Vaksinasi as $data) {
+                            echo "
+                                <tr>
+                                    <!--HINT UNTUK MENGHAPUS USER KALIAN DAPAT MENGGUNAKAN FORM, MENGGUNAKAN ANCHOR ATAU HREF PADA BUTTON-->
+                                        <td>" . $data['name'] . "</td>
+                                        <td>" . $data['alamat'] . "</td>
+                                        <td>" . $data['nohp'] . "</td>
+                                    </form>
+                                </tr>";
+                        }
+
+                        ?>
+                    </tbody>
+                </table>
+                <!-- <ul>
                     <?php
                     foreach ($Vaksinasi as $data) {
                         echo
@@ -85,7 +148,7 @@
                         </li>";
                     }
                     ?>
-                </ul>
+                </ul> -->
             </div>
         </div>
 
