@@ -57,21 +57,16 @@
             <p>Lokasi : Kota Jayapura, Papua</p>
             <div class="list-content">
                 <ul>
-                    <li>
-                        <p>RS Dian Harapan</p>
-                        <p>Jl Teruna Bakti Yabansai Waena, Heram, Kota Jayapura, Papua, 99358</p>
-                        <p>+6281245508768</p>
-                    </li>
-                    <li>
-                        <p>RS Dian Harapan</p>
-                        <p>Jl Teruna Bakti Yabansai Waena, Heram, Kota Jayapura, Papua, 99358</p>
-                        <p>+6281245508768</p>
-                    </li>
-                    <li>
-                        <p>RS Dian Harapan</p>
-                        <p>Jl Teruna Bakti Yabansai Waena, Heram, Kota Jayapura, Papua, 99358</p>
-                        <p>+6281245508768</p>
-                    </li>
+                    <?php
+                    foreach ($Hospital as $data) {
+                        echo
+                        "<li>
+                        <p>" . $data['nama'] . "</p>
+                        <p>" . $data['alamat'] . "</p>
+                        <p>" . $data['nohp'] . "</p>
+                        </li>";
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -80,21 +75,16 @@
             <p>Lokasi : Kota Jayapura, Papua</p>
             <div class="list-content">
                 <ul>
-                    <li>
-                        <p>RS Dian Harapan</p>
-                        <p>Jl Teruna Bakti Yabansai Waena, Heram, Kota Jayapura, Papua, 99358</p>
-                        <p>+6281245508768</p>
-                    </li>
-                    <li>
-                        <p>RS Dian Harapan</p>
-                        <p>Jl Teruna Bakti Yabansai Waena, Heram, Kota Jayapura, Papua, 99358</p>
-                        <p>+6281245508768</p>
-                    </li>
-                    <li>
-                        <p>RS Dian Harapan</p>
-                        <p>Jl Teruna Bakti Yabansai Waena, Heram, Kota Jayapura, Papua, 99358</p>
-                        <p>+6281245508768</p>
-                    </li>
+                    <?php
+                    foreach ($Vaksinasi as $data) {
+                        echo
+                        "<li>
+                        <p>" . $data['name'] . "</p>
+                        <p>" . $data['alamat'] . "</p>
+                        <p>" . $data['nohp'] . "</p>
+                        </li>";
+                    }
+                    ?>
                 </ul>
             </div>
         </div>

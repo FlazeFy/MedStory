@@ -6,9 +6,12 @@ class Covid19 extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $this->load->model('M_Covid19');
     }
     public function index()
     {
-        $this->load->view('V_Covid19');
+        $data['Hospital'] = $this->M_Covid19->getAllHospital();
+        $data['Vaksinasi'] = $this->M_Covid19->getAllVaksinasi();
+        $this->load->view('V_Covid19', $data);
     }
 }
