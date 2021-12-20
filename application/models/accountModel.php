@@ -10,7 +10,7 @@
 			return $data = $this->db->get()->result_array();
 		}
 		
-		//Ubah data
+		//Ubah data akun
 		function ubahData($data)
 		{
 			$id = $this->input->post('id');

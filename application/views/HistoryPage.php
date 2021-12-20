@@ -136,6 +136,7 @@
                   <p class='card-text'>".$data['diagnosa']."</p>
                   <h6 class='card-title'>Solusi</h6>
                   <p class='card-text'>".$data['solusi']."</p>
+									<button type='button' class='btn btn-primary' style='background-color: #4183D7; border: 3px solid whitesmoke; border-radius: 10px; box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.2); float:left;'>Daftar Konsultasi Lanjutan</button> 
                 </div>
                 <div class='card-footer'>
                   <small class='text-muted' style='float: left;'>".$data['tanggal']."</small>
@@ -159,6 +160,7 @@
                   <p class='card-text'>".$data['diagnosa']."</p>
                   <h6 class='card-title'>Solusi</h6>
                   <p class='card-text'>".$data['solusi']."</p>
+									<button type='button' class='btn btn-primary' style='background-color: #4183D7; border: 3px solid whitesmoke; border-radius: 10px; box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.2); float:left;'>Daftar Konsultasi Lanjutan</button> 
                 </div>
                 <div class='card-footer'>
                   <small class='text-muted' style='float: left;'>".$data['tanggal']."</small>
@@ -186,62 +188,242 @@
 					</form>
 					</div>
 					<br>
-        	<div class="row">
-						<!--Item 3-->
-						<div class="card-deck" style="margin: 10px;">
-						<div class="card">
-                    <div class="card-header bg-white">
-                        <img class="card-img-top" src="assets/rs1.jpeg" alt="Card image cap" style="width: 60px; height: 60px; margin-left: 50px;">
-                        <div style="float: left; margin-top: 20px;"><h4 style="color: #4183D7;">RS Dian Harapan</h4></div>
-                        <div style="float: right; margin-top: 20px;"><h4 style="color: #A053D4;">Laboratorium</h4></div>
+
+					<!--Pemeriksaan Darah-->
+          <h2 style="text-align: left; font-size:20px;">Pemeriksaan Darah</h2>
+					<?php
+            $newdeck = 1;
+            $i = 1;
+            foreach ($dataPeriksaD as $data){
+            if ($newdeck % 3 != 0){
+						echo "
+						<div class='row'>
+						<div class='card-deck' style='margin: 10px;'>
+						<div class='card'>
+                    <div class='card-header bg-white'>
+                        <img class='card-img-top' src='assets/rs".$i.".jpeg' alt='Card image cap' style='width: 60px; height: 60px; margin-left: 50px;'>
+                        <div style='float: left; margin-top: 20px;'><h4 style='color: #4183D7;'>".$data['lokasi']."</h4></div>
+                        <div style='float: right; margin-top: 20px;'><h4 style='color: #A053D4;'>Laboratorium</h4></div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title" style="font-weight: bold; font-size: 18px;">Pemeriksaan Darah</h5>
+                    <div class='card-body'>
+                        <h5 class='card-title' style='font-weight: bold; font-size: 18px;'>Pemeriksaan Darah</h5>
                         <br>
-                        <h6 class="card-title">Detail Pemeriksaan</h6>
-                        <div class="container">
-                            <div class="col-sm">
+                        <h6 class='card-title'>Detail Pemeriksaan</h6>
+                        <div class='container'>                       
                             <!--Tabel.-->
-                            <table class="table">
-                                <thead class="thead-dark">
+                            <table class='table'>
+                                <thead class='thead-dark'>
                                     <tr>
-                                      <th scope="col">Jenis Pemeriksaan</th>
-                                      <th scope="col">Hasil Pemeriksaan</th>
-                                      <th scope="col">Normal</th>
+                                      <th scope='col'>Jenis Pemeriksaan</th>
+                                      <th scope='col'>Hasil Pemeriksaan / Normal</th>
                                     </tr>
                                   </thead>
-                                  <tbody>
-                                    <tr>
-                                        <th>Eritrosit</th>
-                                        <td>4,6</td>
-                                        <td>4,5-5,5</td>
-                                    <tr>
-                                        <th>Leukosit</th>
-                                        <td>11,0</td>
-                                        <td>5,0-10,0</td>  
-                                    <tr>
-                                        <th>Hemoglobin(HB)</th>
-                                        <td>13,5</td>
-                                        <td>13,0-16,0</td>
-                                    <tr>
-                                        <th>Malaria(Rapid)</th>
-                                        <td>Negatif</td>
-                                        <td>-</td>                                   
-                                  </tbody>
-                            </table> 
-                            </div>
-                            <h6 class="card-title">Dokter Penanggung Jawab</h6>
-                            <p>Dr. Josef Mengele</p>
+                                <tbody>
+																	<tr>
+																	<th>Leukosit</th>
+																	<td>".$data['j_Leukosit']."</td>
+																<tr>
+																	<th>Eritrosit</th>
+																	<td>".$data['j_Eritrosit']."</td>
+																<tr>
+																	<th>Trombosit</th>
+																	<td>".$data['j_Trombosit']."</td>
+																<tr>
+																	<th>Hemoglobin(HB)</th>
+																	<td>".$data['j_Hemoglobin']."</td>
+																<tr>
+																	 <th>Hematrokit(Hr)</th>
+																	<td>".$data['j_Hematrokit']."</td>
+																<tr>
+																	<th>Glukosa</th>
+																	<td>".$data['j_Glukosa']."</td>
+                            </table>    
+                            <h6 class='card-title'>Dokter Penanggung Jawab</h6>
+                            <p>".$data['namaDokter']."</p>
                         </div>
                       </div>
-                      <div class="card-footer">
-                        <small class="text-muted">Selasa, 23 Maret 2021</small>
+                      <div class='card-footer'>
+                        <small class='text-muted'>".$data['tanggal']." / ".$data['jam']."</small>
                       </div>
                     </div>
 								</div>
-				</div>
+							</div>";
+						} else {
+							echo "
+						<div class='card'>
+                    <div class='card-header bg-white'>
+                        <img class='card-img-top' src='assets/rs1.jpeg' alt='Card image cap' style='width: 60px; height: 60px; margin-left: 50px;'>
+                        <div style='float: left; margin-top: 20px;'><h4 style='color: #4183D7;'>".$data['lokasi']."</h4></div>
+                        <div style='float: right; margin-top: 20px;'><h4 style='color: #A053D4;'>Laboratorium</h4></div>
+                    </div>
+                    <div class='card-body'>
+                        <h5 class='card-title' style='font-weight: bold; font-size: 18px;'>Pemeriksaan Darah</h5>
+                        <br>
+                        <h6 class='card-title'>Detail Pemeriksaan</h6>
+                        <div class='container'>                       
+                            <!--Tabel.-->
+                            <table class='table'>
+                                <thead class='thead-dark'>
+                                    <tr>
+                                      <th scope='col'>Jenis Pemeriksaan</th>
+                                      <th scope='col'>Hasil Pemeriksaan / Normal</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+																		<tr>
+																			<th>Leukosit</th>
+																			<td>".$data['j_Leukosit']."</td>
+                                    <tr>
+                                      <th>Eritrosit</th>
+                                      <td>".$data['j_Eritrosit']."</td>
+                                    <tr>
+                                      <th>Trombosit</th>
+                                      <td>".$data['j_Trombosit']."</td>
+                                    <tr>
+                                    	<th>Hemoglobin(HB)</th>
+                                      <td>".$data['j_Hemoglobin']."</td>
+                                    <tr>
+                                     	<th>Hematrokit(Hr)</th>
+                                    	<td>".$data['j_Hematrokit']."</td>
+																		<tr>
+																			<th>Glukosa</th>
+																			<td>".$data['j_Glukosa']."</td>
+                                  </tbody>
+                            </table>    
+                            <h6 class='card-title'>Dokter Penanggung Jawab</h6>
+                            <p>Dr. Josef Mengele</p>
+                        </div>
+                      </div>
+                      <div class='card-footer'>
+                        <small class='text-muted'>".$data['tanggal']."</small>
+                      </div>
+							</div>";
+						}
+					}
+				?>
+
+				<!--Pemeriksaan Penyakit-->
+				<h2 style="text-align: left; font-size:20px;">Pemeriksaan Penyakit</h2>
+					<?php
+            $newdeck = 1;
+            $i = 1;
+            foreach ($dataPeriksaP as $data){
+            if ($newdeck % 3 != 0){
+						echo "
+						<div class='row'>
+						<div class='card-deck' style='margin: 10px;'>
+						<div class='card'>
+                    <div class='card-header bg-white'>
+                        <img class='card-img-top' src='assets/rs".$i.".jpeg' alt='Card image cap' style='width: 60px; height: 60px; margin-left: 50px;'>
+                        <div style='float: left; margin-top: 20px;'><h4 style='color: #4183D7;'>".$data['lokasi']."</h4></div>
+                        <div style='float: right; margin-top: 20px;'><h4 style='color: #A053D4;'>Laboratorium</h4></div>
+                    </div>
+                    <div class='card-body'>
+                        <h5 class='card-title' style='font-weight: bold; font-size: 18px;'>Pemeriksaan Darah</h5>
+                        <br>
+                        <h6 class='card-title'>Detail Pemeriksaan</h6>
+                        <div class='container'>                       
+                            <!--Tabel.-->
+                            <table class='table'>
+                                <thead class='thead-dark'>
+                                    <tr>
+                                      <th scope='col'>Jenis Pemeriksaan</th>
+                                      <th scope='col'>Hasil Pemeriksaan</th>
+                                    </tr>
+                                  </thead>
+                                <tbody>
+																	<tr>
+																	<th>".$data['jenis']."</th>
+																	<td>".$data['hasil']."</td>
+                            </table>    
+                            <h6 class='card-title'>Dokter Penanggung Jawab</h6>
+                            <p>".$data['namaDokter']."</p>
+                        </div>
+                      </div>
+                      <div class='card-footer'>
+                        <small class='text-muted'>".$data['tanggal']." / ".$data['jam']."</small>
+                      </div>
+                    </div>
+								</div>
+							</div>";
+						} else {
+							echo "
+						<div class='card'>
+                    <div class='card-header bg-white'>
+                        <img class='card-img-top' src='assets/rs1.jpeg' alt='Card image cap' style='width: 60px; height: 60px; margin-left: 50px;'>
+                        <div style='float: left; margin-top: 20px;'><h4 style='color: #4183D7;'>".$data['lokasi']."</h4></div>
+                        <div style='float: right; margin-top: 20px;'><h4 style='color: #A053D4;'>Laboratorium</h4></div>
+                    </div>
+                    <div class='card-body'>
+                        <h5 class='card-title' style='font-weight: bold; font-size: 18px;'>Pemeriksaan Darah</h5>
+                        <br>
+                        <h6 class='card-title'>Detail Pemeriksaan</h6>
+                        <div class='container'>                       
+												<!--Tabel.-->
+												<table class='table'>
+														<thead class='thead-dark'>
+																<tr>
+																	<th scope='col'>Jenis Pemeriksaan</th>
+																	<th scope='col'>Hasil Pemeriksaan</th>
+																</tr>
+															</thead>
+														<tbody>
+															<tr>
+															<th>".$data['jenis']."</th>
+															<td>".$data['hasil']."</td>
+												</table>    
+                            <h6 class='card-title'>Dokter Penanggung Jawab</h6>
+                            <p>Dr. Josef Mengele</p>
+                        </div>
+                      </div>
+                      <div class='card-footer'>
+                        <small class='text-muted'>".$data['tanggal']."</small>
+                      </div>
+							</div>";
+						}
+					}
+				?>
+
 				</div>
 				</main>
+				
+				<!-- Konsultasi lanjutan -->
+				<div class="container-fluid bg-white" id="card-car" style="margin-bottom: 1%; margin-top: 1%; width: 70%; padding-top: 0.5%; border-radius: 10px;">
+          <h1 style="text-align: left;">Konsultasi Lanjutan & Berobat</h1><br>
+					<button type='button' class='btn btn-primary' style='background-color: #4183D7; border: 3px solid whitesmoke; border-radius: 10px; box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.2); float:left;'
+					data-toggle="modal" data-target="#tambahBerobatModal">Daftar Berobat</button> 
+					<br><br>
+					<!--Tabel.-->
+					<table class="table">
+            <thead class="thead-dark">
+            <tr>
+        	  <th scope="col">Jenis Konsultasi</th>
+						<th scope="col">Kode Booking</th>
+            <th scope="col">Dokter</th>
+						<th scope="col">Lokasi</th>
+						<th scope="col">Jam</th>
+            <th scope="col">Tanggal</th>
+						<th scope="col">Edit</th>
+            <th scope="col">Hapus</th>
+            </tr>
+            </thead>
+            <tbody>
+						<?php
+							foreach ($dataKonsultasi as $data) {
+							echo" <tr>
+              <th>".$data['spesialis']."</th>
+							<th>".$data['kodeBooking']."</th>
+              <td>".$data['namaDokter']."</td>
+              <td>".$data['lokasi']."</td>
+							<th>".$data['jam']."</th>
+              <th>".$data['tanggal']."</th>
+							<td><button type='button' style='background-color: #4183D7; border: 1px; border-radius: 7px; color:whitesmoke; font-size:13px;' data-toggle='modal' data-target='#editBerobatModal".$data['kodeBooking']."'>Edit</button></td>
+							<td><button type='button' style='background-color: #F6404F; border: 1px; border-radius: 7px; color:whitesmoke; font-size:13px;'>Batalkan</button></td>";}   
+						?>                            
+            </tbody>
+          </table> 
+				</div>
+
         <!-- Footer -->
         <footer class="text-center text-lg-start bg-light text-muted">
         <section style="background-color: #4183D7; padding-top: 3px;">
@@ -339,7 +521,77 @@
 						</div>
 					</div>
 				</div>
+				<!-- Daftar Berobat -->
+				<div class="modal fade" id="tambahBerobatModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Daftar Berobat</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<form method="POST" action="">
+							<div class="modal-body" style="text-align: left">
+									<h6 class='card-title'>Dokter</h6>
+									<select class="form-control" name="dokterTambah">
+									<?php foreach ($dataPraktik as $data ) {
+										echo "<option value=".$data['namaDokter'].">".$data['namaDokter']." - Spesialis ".$data['spesialis']."</option>";
+										$i++;
+									} ?>
+									</select><br>
+									<h6 class='card-title'>Lokasi</h6>
+									<input class="form-control" type="" name="lokasiTambah" disabled placeholder="<?php 
+                  foreach ($dataPraktik as $data ) {
+                    echo $data['lokasi'];
+                  }
+                  ?>"></input><br>
+									<h6 class='card-title'>Tanggal</h6>
+									<input class="form-control" type="date" name="tanggalTambah"></input><br>
+									<h6 class='card-title'>Jam</h6>
+									<input class="form-control" type="time" name="jamTambah"></input><br>
+							</div></form>
+							<div class="modal-footer">
+								<p>Untuk informasi lebih lanjut, kunjungi </p>
+								<button type="button" class="btn btn-primary" style="background-color: #4183D7; border: 3px solid whitesmoke; border-radius: 10px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Bantuan</button>
+								<button type="button" class="btn btn-primary" style="background-color: #119e37; border: 3px solid whitesmoke; border-radius: 10px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);">Daftar</button>
+							</div>
+						</div>
+					</div>
+				</div>
 
+				<!-- Edit Berobat -->
+				<form method="post" action='<?php echo base_url().'history/ubah';?>'>
+				<?php foreach ($dataKonsultasi as $data){
+					echo "<div class='modal fade' id='editBerobatModal".$data['kodeBooking']."' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+					<div class='modal-dialog'>
+						<div class='modal-content'>
+							<div class='modal-header'>
+								<h5 class='modal-title' id='exampleModalLabel'>Edit Berobat</h5>
+								<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+									<span aria-hidden='true'>&times;</span>
+								</button>
+							</div>
+							<div class='modal-body' style='text-align: left'>
+									<h6 class='card-title'>Dokter</h6>
+									<input class='form-control' type='' name='namaDokter' disabled placeholder='".$data['namaDokter']."'><br>
+									<h6 class='card-title'>Lokasi</h6>
+									<input class='form-control' type='' name='lokasiTambah' disabled placeholder='".$data['lokasi']."'></input><br>
+									<h6 class='card-title'>Tanggal</h6>
+									<input class='form-control' type='date' name='tanggalTambah'></input><br>
+									<h6 class='card-title'>Jam</h6>
+									<input class='form-control' type='time' name='jamTambah'></input><br>
+									<p style='float:left; font-weight:bold;'>Kode Booking Berobat</p>
+									<h2 style='float:right;'>".$data['kodeBooking']."</h2>
+									<input hidden class='form-control' name='kodeBooking' value='".$data['kodeBooking']."'></input>
+							</div>
+							<div class='modal-footer'>
+								<button type='submit' class='btn btn-primary' style='background-color: #119e37; border: 3px solid whitesmoke; border-radius: 10px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);'>Simpan</button>
+							</div>
+						</div>
+					</div>
+				</div>";
+				}?></form>
 
         <div class="text-center p-4" style="background-color: #333333; color: whitesmoke;">1302194041-Leonardho R Sitanggang</div>
         </footer>
