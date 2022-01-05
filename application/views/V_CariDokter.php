@@ -67,8 +67,28 @@
     <div class="container mt-5 pt-5">
         <h2 class="judul text-center">Cari Dokter di Tempat Sekitar</h2>
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col justify-content-start text-center">
+                <table class="table table-bordered bg-warning">
+                    <thead>
+                        <th>
+                            <h4>Nama RS</h4>
+                        </th>
+                    </thead>
 
+                    <tbody>
+                        <?php
+                        foreach ($Hospital as $data) {
+                            echo "
+                        <tr>
+                        <td><h6>" . $data['nama'] . "</h6></td>
+                        </tr>
+                    ";
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class=" col-12 text-center">
                 <section class="container-rujukan mb-3 mt-3">
                     <!-- collapse -->
                     <button class="btn btn-primary bg-light text-dark font-weight-bold " type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
