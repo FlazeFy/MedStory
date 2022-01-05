@@ -18,6 +18,10 @@
         .card-text {
             color: #000;
         }
+
+        .card {
+            border: 1px solid #999;
+        }
     </style>
 </head>
 
