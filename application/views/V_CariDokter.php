@@ -14,6 +14,10 @@
             color: #000;
             font-weight: bold;
         }
+
+        .card-text {
+            color: #000;
+        }
     </style>
 </head>
 
@@ -61,12 +65,12 @@
         <div class="row">
             <div class="col-12 text-center">
 
-                <section class="container-rujukan mb-3">
+                <section class="container-rujukan mb-3 mt-3">
                     <!-- collapse -->
                     <button class="btn btn-primary bg-light text-dark font-weight-bold " type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                         Rumah Sakit Santo Yusuf
                     </button>
-                    <div class="collapse" id="collapseExample">
+                    <div class="collapse mt-3" id="collapseExample">
                         <div class="card card-body">
                             <!-- mulai slide -->
                             <!-- Succes -->
@@ -100,7 +104,7 @@
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
+                                                        <img class="card-img-top" src="assets/doctor.jpg" alt="Card image cap">
                                                         <div class="card-body">
                                                             <h4 class="card-title">Dokter1</h4>
                                                             <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
@@ -112,7 +116,7 @@
 
                                                 <div class="col-md-4 clearfix d-none d-md-block">
                                                     <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
+                                                        <img class="card-img-top" src="assets/doctor.jpg" alt="Card image cap">
                                                         <div class="card-body">
                                                             <h4 class="card-title">Dokter2</h4>
                                                             <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
@@ -124,7 +128,7 @@
 
                                                 <div class="col-md-4 clearfix d-none d-md-block">
                                                     <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
+                                                        <img class="card-img-top" src="assets/doctor.jpg" alt="Card image cap">
                                                         <div class="card-body">
                                                             <h4 class="card-title">Dokter3</h4>
                                                             <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
@@ -144,7 +148,7 @@
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
+                                                        <img class="card-img-top" src="assets/doctor.jpg" alt="Card image cap">
                                                         <div class="card-body">
                                                             <h4 class="card-title">Dokter4</h4>
                                                             <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
@@ -156,7 +160,7 @@
 
                                                 <div class="col-md-4 clearfix d-none d-md-block">
                                                     <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
+                                                        <img class="card-img-top" src="assets/doctor.jpg" alt="Card image cap">
                                                         <div class="card-body">
                                                             <h4 class="card-title">Dokter5</h4>
                                                             <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
@@ -168,7 +172,7 @@
 
                                                 <div class="col-md-4 clearfix d-none d-md-block">
                                                     <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
+                                                        <img class="card-img-top" src="assets/doctor.jpg" alt="Card image cap">
                                                         <div class="card-body">
                                                             <h4 class="card-title">Dokter6</h4>
                                                             <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
@@ -188,7 +192,7 @@
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
+                                                        <img class="card-img-top" src="assets/doctor.jpg" alt="Card image cap">
                                                         <div class="card-body">
                                                             <h4 class="card-title">Dokter7</h4>
                                                             <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
@@ -200,7 +204,7 @@
 
                                                 <div class="col-md-4 clearfix d-none d-md-block">
                                                     <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
+                                                        <img class="card-img-top" src="assets/doctor.jpg" alt="Card image cap">
                                                         <div class="card-body">
                                                             <h4 class="card-title">Dokter8</h4>
                                                             <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
@@ -212,364 +216,7 @@
 
                                                 <div class="col-md-4 clearfix d-none d-md-block">
                                                     <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter9</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <!--/.Third slide-->
-
-                                    </div>
-                                    <!--/.Slides-->
-
-                                </div>
-                                <!--/.Carousel Wrapper-->
-
-
-
-                                <!-- akhir slide -->
-                            </div>
-                        </div>
-                </section>
-
-
-                <section class="container-rujukan mb-3">
-                    <!-- collapse -->
-                    <button class="btn btn-primary bg-light text-dark font-weight-bold " type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        Rumah Sakit Muhammadiyah
-                    </button>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            <!-- mulai slide -->
-                            <!-- Succes -->
-                            <div class="container my-4">
-
-
-                                <!--Carousel Wrapper-->
-                                <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-
-                                    <!--Controls-->
-                                    <div class="controls-top">
-                                        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-                                        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
-                                    </div>
-                                    <!--/.Controls-->
-
-                                    <!--Indicators-->
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-                                        <li data-target="#multi-item-example" data-slide-to="1"></li>
-                                        <li data-target="#multi-item-example" data-slide-to="2"></li>
-                                    </ol>
-                                    <!--/.Indicators-->
-
-                                    <!--Slides-->
-                                    <div class="carousel-inner" role="listbox">
-
-                                        <!--First slide-->
-                                        <div class="carousel-item active">
-
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter1</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 clearfix d-none d-md-block">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter2</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 clearfix d-none d-md-block">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter3</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <!--/.First slide-->
-
-                                        <!--Second slide-->
-                                        <div class="carousel-item">
-
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter4</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 clearfix d-none d-md-block">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter5</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 clearfix d-none d-md-block">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter6</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <!--/.Second slide-->
-
-                                        <!--Third slide-->
-                                        <div class="carousel-item">
-
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter7</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 clearfix d-none d-md-block">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter8</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 clearfix d-none d-md-block">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter9</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <!--/.Third slide-->
-
-                                    </div>
-                                    <!--/.Slides-->
-
-                                </div>
-                                <!--/.Carousel Wrapper-->
-
-
-
-                                <!-- akhir slide -->
-                            </div>
-                        </div>
-                </section>
-
-                <section class="container-rujukan mb-3">
-                    <!-- collapse -->
-                    <button class="btn btn-primary bg-light text-dark font-weight-bold " type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        Apotek Kimia Farma Cilegon
-                    </button>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            <!-- mulai slide -->
-                            <!-- Succes -->
-                            <div class="container my-4">
-
-
-                                <!--Carousel Wrapper-->
-                                <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
-
-                                    <!--Controls-->
-                                    <div class="controls-top">
-                                        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-                                        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
-                                    </div>
-                                    <!--/.Controls-->
-
-                                    <!--Indicators-->
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-                                        <li data-target="#multi-item-example" data-slide-to="1"></li>
-                                        <li data-target="#multi-item-example" data-slide-to="2"></li>
-                                    </ol>
-                                    <!--/.Indicators-->
-
-                                    <!--Slides-->
-                                    <div class="carousel-inner" role="listbox">
-
-                                        <!--First slide-->
-                                        <div class="carousel-item active">
-
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter1</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 clearfix d-none d-md-block">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter2</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 clearfix d-none d-md-block">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter3</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <!--/.First slide-->
-
-                                        <!--Second slide-->
-                                        <div class="carousel-item">
-
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter4</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 clearfix d-none d-md-block">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter5</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 clearfix d-none d-md-block">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter6</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <!--/.Second slide-->
-
-                                        <!--Third slide-->
-                                        <div class="carousel-item">
-
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter7</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 clearfix d-none d-md-block">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Dokter8</h4>
-                                                            <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
-                                                                card's content.</p>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4 clearfix d-none d-md-block">
-                                                    <div class="card mb-2">
-                                                        <img class="card-img-top" src="Sample Image/doctor1.jpg" alt="Card image cap">
+                                                        <img class="card-img-top" src="assets/doctor.jpg" alt="Card image cap">
                                                         <div class="card-body">
                                                             <h4 class="card-title">Dokter9</h4>
                                                             <p class="card-text">Some quick example text to build on the Dokter and make up the bulk of the
