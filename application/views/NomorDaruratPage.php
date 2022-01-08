@@ -1,11 +1,11 @@
-<!--Leonardho R. Sitanggang
-    1302194041  SE-43-03
+<!--Muhammad Rafi Alfarisi
+    1302194024  SE-43-03
 -->
 <!DOCTYPE html>
 <html>
 
     <head>
-        <title>NomorDaruratPage_1302194041</title>
+        <title>NomorDaruratPage_1302194024</title>
         <!--Meta tags-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -171,7 +171,7 @@
           </div>
         </section>
 
-        <div class="text-center p-4" style="background-color: #333333; color: whitesmoke;">1302194041-Leonardho R Sitanggang</div>
+        <div class="text-center p-4" style="background-color: #333333; color: whitesmoke;">1302194024-Muhammad Rafi Alfarisi</div>
         </footer>
 
 				<!--Javascript signout-->
